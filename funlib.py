@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import random as rd
 
 def card_decks(n):
     '''' (int) -> list of lists
@@ -26,7 +27,7 @@ def card_decks(n):
 
     return playing_deck
 
-print(card_decks(1))
+# print(card_decks(1))
 
 def player_info():
     ''' () -> dict {player: score}
@@ -48,3 +49,24 @@ def player_info():
         player = input("Enter player name (or 'p' to play): ")
 
     return player_dct
+
+def select_card(card_deck):
+    ''' (list of lists) -> list [str, int]
+
+    Selects one random card from the list cards and returns its corresponding id and value.
+    '''
+
+    card = []
+    #Generate random numbers for indexing
+
+    rand1 = rd.randint(0, len(card_deck)-1)
+    rand2 = rd.randint(0, len(card_deck[rand1])-1)
+
+    #Retrieve random card information from card_deck array
+    card.extend(card_deck[rand1][rand2])
+
+
+    return card
+
+# print(select_card(card_decks(1)))
+
