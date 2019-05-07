@@ -27,3 +27,24 @@ def card_decks(n):
     return playing_deck
 
 print(card_decks(1))
+
+def player_info():
+    ''' () -> dict {player: score}
+
+    Prompt the user to enter payer names, return a dict of player names and card hand total.
+    '''
+
+    player_dct = {}
+    player = input('Enter player name: ')
+
+
+    while player != 'p':
+        if player in player_dct:
+            print('Player {player} is already playing.'.format(player = player))
+
+        if player not in player_dct:
+            player_dct[player] = 0
+
+        player = input("Enter player name (or 'p' to play): ")
+
+    return player_dct
