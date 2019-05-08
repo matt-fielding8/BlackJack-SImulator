@@ -27,7 +27,6 @@ def card_decks(n):
 
     return playing_deck
 
-# print(card_decks(1))
 
 def player_info():
     ''' () -> dict {player: score}
@@ -68,5 +67,4 @@ def select_card(card_deck):
 
     return card
 
-# print(select_card(card_decks(1)))
 
