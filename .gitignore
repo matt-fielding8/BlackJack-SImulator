@@ -4,3 +4,4 @@ fundraft.py
 .idea/modules.xml
 .idea/misc.xml
 .idea/BlackJack_Game.iml
+__pycache__/
