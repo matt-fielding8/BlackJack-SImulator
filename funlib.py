@@ -67,4 +67,20 @@ def select_card(card_deck):
 
     return card
 
+def select_card_value(card):
+    ''' (list [str, int]) -> int
+
+    Returns the value of card.
+
+    >>> select_card_value(['J', 10])
+    10
+    >>> select_card_value(['6', 6])
+    6
+    '''
+
+    card_value = card[-1]
+
+    return card_value
+
+
 
