@@ -87,9 +87,9 @@ def select_card_id(card):
 
     Returns the id of card.
 
-    >>> select_card_value(['J', 10])
+    >>> select_card_id(['J', 10])
     'J'
-    >>> select_card_value(['6', 6])
+    >>> select_card_id(['6', 6])
     '6'
     '''
 
