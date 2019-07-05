@@ -2,30 +2,58 @@ import numpy as np
 import pandas as pd
 import random as rd
 
-def card_decks(n):
-    '''' (int) -> list of lists
+# def card_decks(n):
+#     '''' (int) -> list of lists
+#
+#     Creates n number of card decks arrays consisting of 4 suited sets, with card id at index 0 and card value at index [1:].
+#
+#     >>> card_decks(1):
+#     [[[['A', 1, 11], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], ['J', 10], ['Q', 10], ['K', 10]],
+#     [['A', 1, 11], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], ['J', 10], ['Q', 10], ['K', 10]],
+#     [['A', 1, 11], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], ['J', 10], ['Q', 10], ['K', 10]],
+#     [['A', 1, 11], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], ['J', 10], ['Q', 10], ['K', 10]]]
+#     '''
+#
+#     playing_deck = []
+#     card_array = [['A', 1, 11], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7],
+#                    [8, 8], [9, 9], [10, 10], ['J', 10], ['Q', 10], ['K', 10]]
+#
+#     if n != 0:
+#         for i in range(n*4):
+#             playing_deck.append(card_array)
+#     else:
+#         return "Zero is not a valid number of card decks"
+#
+#
+#     return playing_deck
 
-    Creates n number of card decks arrays consisting of 4 suited sets, with card id at index 0 and card value at index [1:].
+def playing_deck(n):
+    ''' (int) -> list of dicts
 
-    >>> card_decks(1):
-    [[[['A', 1, 11], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], ['J', 10], ['Q', 10], ['K', 10]],
-    [['A', 1, 11], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], ['J', 10], ['Q', 10], ['K', 10]],
-    [['A', 1, 11], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], ['J', 10], ['Q', 10], ['K', 10]],
-    [['A', 1, 11], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], [10, 10], ['J', 10], ['Q', 10], ['K', 10]]]
+    Creates a list of n*4 dicts with car_id's as keys and values as list a list of corresponding card values.
+
+    >>> card_decks():
+    [{'A': [1, 11], '2': [2], '3': [3], '4': [4], '5': [5], '6': [6], '7': [7], '8': [8],\
+        '9': [9], '10': [10], 'J': [10], 'Q': [10], 'K': [10]}
+    {'A': [1, 11], '2': [2], '3': [3], '4': [4], '5': [5], '6': [6], '7': [7], '8': [8],\
+        '9': [9], '10': [10], 'J': [10], 'Q': [10], 'K': [10]}
+    {'A': [1, 11], '2': [2], '3': [3], '4': [4], '5': [5], '6': [6], '7': [7], '8': [8],\
+        '9': [9], '10': [10], 'J': [10], 'Q': [10], 'K': [10]}
+    {'A': [1, 11], '2': [2], '3': [3], '4': [4], '5': [5], '6': [6], '7': [7], '8': [8],\
+        '9': [9], '10': [10], 'J': [10], 'Q': [10], 'K': [10]}]
     '''
 
     playing_deck = []
-    card_array = [['A', 1, 11], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7],
-                   [8, 8], [9, 9], [10, 10], ['J', 10], ['Q', 10], ['K', 10]]
+    card_dict = {'A': [1, 11], '2': [2], '3': [3], '4': [4], '5': [5], '6': [6], '7': [7], '8': [8], \
+                 '9': [9], '10': [10], 'J': [10], 'Q': [10], 'K': [10]}
 
-    if n != 0:
-        for i in range(n*4):
-            playing_deck.append(card_array)
+    if n !=0:
+        for _ in range(n*4):
+            playing_deck.append(card_dict)
+        return playing_deck
+        # return [playing_deck.append([12]) for i in range(n*4)]
     else:
-        return "Zero is not a valid number of card decks"
-
-
-    return playing_deck
+        return "ERROR: Zero is not a valid number of card decks"
 
 
 def player_info():
@@ -108,7 +136,6 @@ def deal_cards(players, deck):
     >>> deal_cards(players, deck):
     [['ding:', 'A J', 20], ['dong:', '2 3', 5], ['Dealer:', 'K', 10]]
     '''
-    
 
 
 
